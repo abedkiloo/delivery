@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3805ed6c-35a0-4376-83ac-f3a63491280e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/OrdersDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Suppliers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/SuppliersProducts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderDetailsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierProductsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/DeliveryAuthentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/DeliveryAuthentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ProductTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ProductTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
@@ -129,9 +138,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -139,16 +149,32 @@
       <recent name="$PROJECT_DIR$/tests/Unit" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/database/migrations" />
-      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.ProductTest.user_cannot_create_product_if_unauthenticated">
+    <configuration name="ProductTest.user_cannot_create_product_if_unauthenticated" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ProductTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ProductTest.php" method="user_cannot_create_product_if_unauthenticated" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductTest.user_canot_create_product_if_unathenticate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ProductTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ProductTest.php" method="user_canot_create_product_if_unathenticate" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ProductTest.user_cannot_create_product_if_unauthenticated" />
+        <item itemvalue="PHPUnit.ProductTest.user_canot_create_product_if_unathenticate" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -174,7 +200,7 @@
       <updated>1582733634512</updated>
       <workItem from="1582733636691" duration="8300000" />
       <workItem from="1582788044122" duration="2938000" />
-      <workItem from="1582923060254" duration="1143000" />
+      <workItem from="1582923060254" duration="6823000" />
     </task>
     <servers />
   </component>
@@ -182,10 +208,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="285" y="55" width="824" height="691" key="#CLI_Interpreters" timestamp="1582924585092">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state x="285" y="55" width="824" height="691" key="#CLI_Interpreters/45.27.1321.741@45.27.1321.741" timestamp="1582924585092" />
+    <state x="300" y="27" width="804" height="741" key="#PHP" timestamp="1582924588802">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state x="300" y="27" width="804" height="741" key="#PHP/45.27.1321.741@45.27.1321.741" timestamp="1582924588802" />
+    <state x="301" y="27" width="823" height="741" key="#ProductTest.user_canot_create_product_if_unathenticate" timestamp="1582924593914">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state x="301" y="27" width="823" height="741" key="#ProductTest.user_canot_create_product_if_unathenticate/45.27.1321.741@45.27.1321.741" timestamp="1582924593914" />
     <state x="45" y="27" width="476" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582736418826">
       <screen x="45" y="27" width="1321" height="741" />
     </state>
     <state x="45" y="27" width="476" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/45.27.1321.741@45.27.1321.741" timestamp="1582736418826" />
+    <state x="438" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582927592027">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state x="438" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/45.27.1321.741@45.27.1321.741" timestamp="1582927592027" />
     <state x="512" y="313" width="377" height="175" key="ComposerInitDialogKey" timestamp="1582738387296">
       <screen x="45" y="27" width="1321" height="741" />
     </state>
@@ -194,6 +236,22 @@
       <screen x="45" y="27" width="1321" height="741" />
     </state>
     <state x="466" y="155" key="FileChooserDialogImpl/45.27.1321.741@45.27.1321.741" timestamp="1582802409782" />
+    <state width="1279" height="174" key="GridCell.Tab.0.bottom" timestamp="1582924837831">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state width="1279" height="174" key="GridCell.Tab.0.bottom/45.27.1321.741@45.27.1321.741" timestamp="1582924837831" />
+    <state width="1279" height="174" key="GridCell.Tab.0.center" timestamp="1582924837829">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state width="1279" height="174" key="GridCell.Tab.0.center/45.27.1321.741@45.27.1321.741" timestamp="1582924837829" />
+    <state width="1279" height="174" key="GridCell.Tab.0.left" timestamp="1582924837828">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state width="1279" height="174" key="GridCell.Tab.0.left/45.27.1321.741@45.27.1321.741" timestamp="1582924837828" />
+    <state width="1279" height="174" key="GridCell.Tab.0.right" timestamp="1582924837830">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state width="1279" height="174" key="GridCell.Tab.0.right/45.27.1321.741@45.27.1321.741" timestamp="1582924837830" />
     <state x="381" y="216" width="638" height="370" key="NewPhpClassDialog" timestamp="1582735790177">
       <screen x="45" y="27" width="1321" height="741" />
     </state>
@@ -202,5 +260,20 @@
       <screen x="45" y="27" width="1321" height="741" />
     </state>
     <state width="498" height="444" key="SwitcherDM/45.27.1321.741@45.27.1321.741" timestamp="1582736401430" />
+    <state x="368" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582925894715">
+      <screen x="45" y="27" width="1321" height="741" />
+    </state>
+    <state x="368" y="89" width="672" height="678" key="search.everywhere.popup/45.27.1321.741@45.27.1321.741" timestamp="1582925894715" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Models/Orders.php</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

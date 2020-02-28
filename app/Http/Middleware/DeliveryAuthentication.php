@@ -16,7 +16,6 @@ class DeliveryAuthentication
     {
         Config::set('jwt.user', User::class);
         Config::set('auth.providers.users.model', User::class);
-
     }
 
     /**
@@ -29,22 +28,6 @@ class DeliveryAuthentication
     public function handle($request, Closure $next)
     {
         $user = null;
-//        if (isset($request->headers->all()['userapisecret']) && isset($request->headers->all()['userphonenumber'])) {
-//            //format phone number
-//            $phone_no = stripcslashes($request->headers->all()['userphonenumber'][0]);
-//            $header_phone_no =  ZaraUtils::convert_phone_to_kenyan_format($phone_no);
-//
-//            $header_api_secret = $request->headers->all()['userapisecret'];
-//            $user = User::where('api_secret', $header_api_secret)->
-//            where('phone_no', $header_phone_no)->
-//            first();
-//            if(is_null($user))
-//                return $this->unauthorized();
-//
-//            Auth::login($user);
-//
-//        } else {
-        $value = config('jwt.user');
 
         try {
             //Access token from the request

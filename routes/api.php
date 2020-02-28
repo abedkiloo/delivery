@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 
 /*
@@ -18,8 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'v1'], function () {
-    Route::resource('users', UserController::class);
+
+Route::group(['prefix' => 'v1', 'middleware' => ['api']], function () {
+
+    Route::post('users', 'UserController@store');
+    Route::post('login', 'UserController@login');
+
+});
+
+Route::group(['prefix' => 'v1','middleware'=>['delivery_auth']], function () {
+//    Route::apiResources(['users', 'UserController']);
 
     /**
      * products end points

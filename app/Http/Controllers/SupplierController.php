@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Suppliers;
+use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Tymon\JWTAuth\JWTAuth;
 
-class UserController extends Controller
+class SupplierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $suppliers = Suppliers::paginate(10);
+        } catch (QueryException $exception) {
+            return response()->json("server error" . $exception->getMessage(), 500);
+        }
+        return api_response(true, null, 0, 'success', 'Successfully Retrieved suppliers', $suppliers);
+
     }
 
     /**
@@ -34,53 +40,27 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-//            'c_password' => 'required|same:password',
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'name' => 'required',
 
+            ]);
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 401);
+            return api_response(false, $validator->errors(), 1, 'failed',
+                "Some entries are missing", null);
+        } else {
+            $suppliers = new Suppliers();
+            $suppliers->name = $request->name;
+            $suppliers->created_at = Carbon::now();
+            $suppliers->save();
+            return api_response(true, null, 0, 'success',
+                "successfully inserted an new supplier", $suppliers);
         }
 
-        $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
-
-        $user = User::create($input);
-
-        $success = [
-            'user' => $user,
-            'token' => $user->createToken('bigStore')->accessToken,
-        ];
-
-        return response()->json($success);
-    }
-
-    public function login(Request $request)
-    {
-        $credentials = [
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-        ];
-
-        $status = 401;
-        $response = ['error' => 'Unauthorised'];
-
-        if (Auth::attempt($credentials)) {
-            $status = 200;
-            $response = [
-                'token' =>  \Tymon\JWTAuth\Facades\JWTAuth::fromUser(Auth::user()),
-                'user' => Auth::user()
-            ];
-        }
-
-        return response()->json($response, $status);
     }
 
     /**
