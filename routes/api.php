@@ -20,4 +20,25 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1'], function () {
     Route::resource('users', UserController::class);
+
+    /**
+     * products end points
+     */
+    Route::apiResources(['products' => "ProductsController"]);
+    /**
+     * orders end points
+     */
+    Route::apiResources(['orders' => "OrdersController"]);/**
+     * suppliers end points
+     */
+    Route::apiResources(['suppliers' => "SupplierController"]);
+    /**
+     * supplier-products end points
+     */
+    Route::apiResources(['supplier-products' => "SupplierProductsController"]);
+    /**
+     * orders end points
+     */
+    Route::apiResources(['order-details' => "OrderDetailsController"]);
+
 });

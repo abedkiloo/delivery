@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3805ed6c-35a0-4376-83ac-f3a63491280e" name="Default Changelist" comment="" />
+    <list default="true" id="3805ed6c-35a0-4376-83ac-f3a63491280e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/Orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/OrdersDetails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Suppliers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/SuppliersProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +18,9 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -112,6 +121,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1YLtK3JG2p0Ymf1ONWXBUyVlYvw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -121,15 +131,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/Unit" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Models" />
+      <recent name="$PROJECT_DIR$/database/migrations" />
+      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
     </key>
   </component>
   <component name="RunManager">
@@ -162,7 +174,7 @@
       <updated>1582733634512</updated>
       <workItem from="1582733636691" duration="8300000" />
       <workItem from="1582788044122" duration="2938000" />
-      <workItem from="1582923060254" duration="897000" />
+      <workItem from="1582923060254" duration="1143000" />
     </task>
     <servers />
   </component>
